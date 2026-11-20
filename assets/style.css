@@ -1,0 +1,586 @@
+/* ============================================================
+   GENERATOR RPM — gaya antarmuka
+   Palet: hijau tua (utama), amber (aksen), netral hangat
+   ============================================================ */
+
+:root {
+    --green-900: #0d3b2e;
+    --green-800: #12503c;
+    --green-700: #196b4f;
+    --green-100: #e6f2ec;
+    --amber-600: #c27616;
+    --amber-100: #fdf1de;
+    --ink-900: #1c2722;
+    --ink-700: #45524b;
+    --ink-500: #6b7770;
+    --line: #e2e7e3;
+    --surface: #ffffff;
+    --bg: #f5f7f4;
+    --blue-100: #e8f0fa;
+    --purple-100: #f0ebfa;
+    --red-100: #fbeaea;
+}
+
+html, body, [class*="css"] {
+    font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.stApp {
+    background: var(--bg);
+    color: var(--ink-900);
+}
+
+header[data-testid="stHeader"] {
+    background: transparent;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+    background: var(--bg);
+}
+
+.block-container {
+    padding-top: 2.2rem;
+    padding-bottom: 4rem;
+    max-width: 1180px;
+}
+
+/* ---------------- Sidebar ---------------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0d3b2e 0%, #0a2f25 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+section[data-testid="stSidebar"] * {
+    color: #e9f2ed;
+}
+
+section[data-testid="stSidebar"] .stRadio label,
+section[data-testid="stSidebar"] .stRadio p {
+    font-size: 0.93rem;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label {
+    padding: 0.5rem 0.65rem;
+    border-radius: 9px;
+    margin-bottom: 2px;
+    transition: background 0.15s ease;
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+section[data-testid="stSidebar"] div[role="radiogroup"] label[data-checked="true"],
+section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {
+    background: rgba(255, 255, 255, 0.13);
+    border-left: 3px solid #e0a33a;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-brand {
+    padding: 0.35rem 0 0.9rem 0;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 0.35rem;
+}
+
+.sidebar-logo-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #e0a33a, #c27616);
+    color: #173a2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: -0.5px;
+}
+
+.sidebar-logo-text {
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.sidebar-logo-text small {
+    display: block;
+    font-weight: 500;
+    font-size: 0.66rem;
+    letter-spacing: 1.1px;
+    color: #a9c9b9;
+    margin-top: 2px;
+    text-transform: uppercase;
+}
+
+.sidebar-label {
+    font-size: 0.66rem;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    color: #93b7a6;
+    margin: 0.6rem 0 0.15rem;
+}
+
+.sidebar-profile {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    padding: 0.6rem 0.7rem;
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.sidebar-profile b {
+    color: #ffffff;
+}
+
+.sidebar-status {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.35rem 0;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-ok { background: #63d29b; box-shadow: 0 0 0 3px rgba(99, 210, 155, 0.15); }
+.dot-warn { background: #e0a33a; box-shadow: 0 0 0 3px rgba(224, 163, 58, 0.15); }
+.dot-off { background: #d97b7b; box-shadow: 0 0 0 3px rgba(217, 123, 123, 0.15); }
+
+/* ---------------- Header halaman ---------------- */
+.page-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    margin: 0.2rem 0 1.5rem;
+}
+
+.page-head-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: var(--green-100);
+    color: var(--green-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.page-head h1 {
+    font-size: 1.7rem;
+    font-weight: 750;
+    margin: 0;
+    color: var(--green-900);
+    letter-spacing: -0.3px;
+}
+
+.page-head p {
+    margin: 0.2rem 0 0;
+    color: var(--ink-500);
+    font-size: 0.93rem;
+}
+
+h2, h3, h4 {
+    color: var(--green-900);
+    letter-spacing: -0.2px;
+}
+
+/* ---------------- Kartu statistik ---------------- */
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem;
+    border-top: 3px solid var(--green-700);
+    min-height: 118px;
+}
+
+.stat-amber { border-top-color: var(--amber-600); }
+.stat-blue { border-top-color: #3f6ea8; }
+.stat-purple { border-top-color: #7453a8; }
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--green-900);
+    line-height: 1.1;
+}
+
+.stat-label {
+    font-size: 0.83rem;
+    font-weight: 650;
+    color: var(--ink-700);
+    margin-top: 0.35rem;
+}
+
+.stat-hint {
+    font-size: 0.72rem;
+    color: var(--ink-500);
+    margin-top: 0.15rem;
+}
+
+/* ---------------- Profil strip ---------------- */
+.profile-strip {
+    background: linear-gradient(120deg, #0f4837, #196b4f);
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    color: #f2faf6;
+    margin-bottom: 1.25rem;
+}
+
+.profile-strip-label {
+    font-size: 0.66rem;
+    letter-spacing: 1.4px;
+    color: #a9d3bf;
+    font-weight: 700;
+}
+
+.profile-strip-name {
+    font-size: 1.15rem;
+    font-weight: 750;
+    margin-top: 0.15rem;
+}
+
+.profile-strip-sub {
+    font-size: 0.8rem;
+    color: #cbe6d9;
+    margin-top: 0.2rem;
+}
+
+/* ---------------- Komponen umum ---------------- */
+.rpm-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    margin-bottom: 0.9rem;
+}
+
+.rpm-card-title {
+    font-weight: 700;
+    color: var(--green-900);
+    font-size: 0.98rem;
+}
+
+.rpm-card-sub {
+    color: var(--ink-500);
+    font-size: 0.82rem;
+    margin-top: 0.15rem;
+}
+
+.notice {
+    border-radius: 11px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    margin: 0.35rem 0 0.9rem;
+    border: 1px solid transparent;
+}
+
+.notice-info { background: var(--blue-100); border-color: #c9dcf1; color: #24466c; }
+.notice-success { background: #e7f6ee; border-color: #bfe5d0; color: #1b5a3a; }
+.notice-warning { background: var(--amber-100); border-color: #f0d9b4; color: #7a4c0d; }
+.notice-error { background: var(--red-100); border-color: #f0c9c9; color: #7a2020; }
+
+.tag {
+    display: inline-block;
+    padding: 0.16rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.15px;
+    margin-right: 0.25rem;
+}
+
+.tag-ok { background: #e1f4e9; color: #1b5a3a; }
+.tag-warn { background: var(--amber-100); color: #7a4c0d; }
+.tag-info { background: var(--blue-100); color: #24466c; }
+.tag-offline { background: #eceff0; color: #4a5650; }
+.tag-ai { background: #e7eefb; color: #254c83; }
+.tag-neutral { background: #eef1ef; color: #4a5650; }
+.tag-danger { background: var(--red-100); color: #7a2020; }
+
+.empty-state {
+    text-align: center;
+    padding: 2.2rem 1.5rem;
+    background: var(--surface);
+    border: 1px dashed #cfd9d2;
+    border-radius: 14px;
+    margin: 0.8rem 0;
+}
+
+.empty-icon {
+    font-size: 1.8rem;
+    color: #9ab3a6;
+}
+
+.empty-state h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 1.05rem;
+}
+
+.empty-state p {
+    color: var(--ink-500);
+    font-size: 0.86rem;
+    margin: 0 auto;
+    max-width: 520px;
+}
+
+/* ---------------- Aktivitas ---------------- */
+.activity-row {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #eef1ee;
+}
+
+.activity-row:last-child { border-bottom: none; }
+
+.activity-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--amber-600);
+    margin-top: 0.42rem;
+    flex-shrink: 0;
+}
+
+.activity-body { flex: 1; min-width: 0; }
+
+.activity-title {
+    font-size: 0.84rem;
+    font-weight: 650;
+    color: var(--ink-900);
+}
+
+.activity-detail {
+    font-size: 0.75rem;
+    color: var(--ink-500);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.activity-time {
+    font-size: 0.68rem;
+    color: #98a29c;
+    white-space: nowrap;
+}
+
+/* ---------------- Alur ---------------- */
+.mini-step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.85rem 0.9rem;
+    min-height: 128px;
+}
+
+.mini-step-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--green-800);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.45rem;
+}
+
+.mini-step-title {
+    font-weight: 700;
+    font-size: 0.86rem;
+    color: var(--green-900);
+}
+
+.mini-step-text {
+    font-size: 0.74rem;
+    color: var(--ink-500);
+    line-height: 1.45;
+    margin-top: 0.2rem;
+}
+
+/* ---------------- Status panel ---------------- */
+.status-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0.35rem 0.9rem;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eef1ee;
+    font-size: 0.8rem;
+}
+
+.status-row:last-child { border-bottom: none; }
+.status-row span { color: var(--ink-500); }
+.status-row b { color: var(--green-900); text-align: right; word-break: break-word; }
+
+.model-row {
+    display: flex;
+    gap: 0.45rem;
+    padding: 0.3rem 0;
+    font-size: 0.8rem;
+    color: var(--ink-700);
+}
+
+.model-row span { color: var(--green-700); }
+
+/* ---------------- Tahapan wizard ---------------- */
+.step-pill {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    padding: 0.6rem 0.7rem;
+    height: 100%;
+}
+
+.step-pill.active {
+    border-color: var(--green-700);
+    background: var(--green-100);
+}
+
+.step-pill.done {
+    border-color: #b9dcc9;
+}
+
+.step-pill .num {
+    font-size: 0.66rem;
+    font-weight: 700;
+    color: var(--amber-600);
+    letter-spacing: 0.6px;
+}
+
+.step-pill .name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--green-900);
+}
+
+.step-pill .summary {
+    font-size: 0.7rem;
+    color: var(--ink-500);
+}
+
+/* ---------------- Tabel & form Streamlit ---------------- */
+div[data-testid="stForm"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.1rem 1.2rem;
+}
+
+div[data-testid="stExpander"] {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 11px;
+}
+
+div[data-testid="stExpander"] details summary {
+    font-weight: 600;
+    font-size: 0.86rem;
+}
+
+.stTextInput input, .stTextArea textarea, .stNumberInput input, .stSelectbox div[data-baseweb="select"] {
+    border-radius: 9px !important;
+}
+
+.stButton > button, .stDownloadButton > button, .stFormSubmitButton > button {
+    border-radius: 9px;
+    font-weight: 600;
+    font-size: 0.86rem;
+    border: 1px solid #cfd9d2;
+    transition: all 0.15s ease;
+}
+
+.stButton > button[kind="primary"], .stFormSubmitButton > button[kind="primary"] {
+    background: var(--green-800);
+    border-color: var(--green-800);
+    color: #ffffff;
+}
+
+.stButton > button[kind="primary"]:hover, .stFormSubmitButton > button[kind="primary"]:hover {
+    background: var(--green-700);
+    border-color: var(--green-700);
+}
+
+.stButton > button:hover {
+    border-color: var(--green-700);
+    color: var(--green-800);
+}
+
+.stButton > button[kind="primary"]:hover { color: #ffffff; }
+
+[data-testid="stDataFrame"], [data-testid="stDataEditor"] {
+    border-radius: 10px;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--green-900);
+}
+
+.stProgress > div > div > div > div {
+    background: var(--green-700);
+}
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.2rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.stTabs [data-baseweb="tab"] {
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 0.5rem 0.85rem;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--green-800);
+}
+
+hr {
+    border-color: var(--line);
+}
+
+.stAlert {
+    border-radius: 10px;
+}
+
+/* ---------------- Responsif ---------------- */
+@media (max-width: 900px) {
+    .page-head h1 { font-size: 1.4rem; }
+    .stat-card { min-height: 100px; }
+    .block-container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Sembunyikan footer bawaan Streamlit agar tampilan bersih */
+footer { visibility: hidden; }
+#MainMenu { visibility: hidden; }
